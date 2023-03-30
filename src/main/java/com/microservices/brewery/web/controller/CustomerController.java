@@ -33,7 +33,7 @@ public class CustomerController {
         CustomerDto savedCustomer = customerService.saveNewCustomer(customerDto);
         HttpHeaders headers = new HttpHeaders();
         //todo add hotname
-        headers.add("Locartion", "/api/v1/customer/" + savedCustomer.getID().toString());
+        headers.add("Location", "/api/v1/customer/" + savedCustomer.getID().toString());
         return new ResponseEntity(headers, HttpStatus.CREATED);
     }
 
