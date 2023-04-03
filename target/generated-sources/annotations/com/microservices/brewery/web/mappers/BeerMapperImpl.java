@@ -1,18 +1,24 @@
 package com.microservices.brewery.web.mappers;
 
 import com.microservices.brewery.domain.Beer;
+import com.microservices.brewery.domain.Beer.BeerBuilder;
 import com.microservices.brewery.web.model.BeerDto;
 import com.microservices.brewery.web.model.BeerDto.BeerDtoBuilder;
+import com.microservices.brewery.web.model.v2.BeerStyleEnum;
 import javax.annotation.processing.Generated;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-03T21:23:21+0200",
+    date = "2023-04-03T21:52:52+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.3.1 (Oracle Corporation)"
 )
 @Component
 public class BeerMapperImpl implements BeerMapper {
+
+    @Autowired
+    private DateMapper dateMapper;
 
     @Override
     public BeerDto beerToBeerDto(Beer beer) {
@@ -27,23 +33,26 @@ public class BeerMapperImpl implements BeerMapper {
             beerDto.beerStyle( beer.getBeerStyle().name() );
         }
         beerDto.upc( beer.getUpc() );
+        beerDto.createdDate( dateMapper.asOffsetDateTime( beer.getCreatedDate() ) );
 
         return beerDto.build();
     }
 
     @Override
-    public BeerDto beerDtoToBeer(BeerDto beerDto) {
+    public Beer beerDtoToBeer(BeerDto beerDto) {
         if ( beerDto == null ) {
             return null;
         }
 
-        BeerDtoBuilder beerDto1 = BeerDto.builder();
+        BeerBuilder beer = Beer.builder();
 
-        beerDto1.id( beerDto.getId() );
-        beerDto1.beerName( beerDto.getBeerName() );
-        beerDto1.beerStyle( beerDto.getBeerStyle() );
-        beerDto1.upc( beerDto.getUpc() );
+        beer.id( beerDto.getId() );
+        if ( beerDto.getBeerStyle() != null ) {
+            beer.beerStyle( Enum.valueOf( BeerStyleEnum.class, beerDto.getBeerStyle() ) );
+        }
+        beer.upc( beerDto.getUpc() );
+        beer.createdDate( dateMapper.asTimestamp( beerDto.getCreatedDate() ) );
 
-        return beerDto1.build();
+        return beer.build();
     }
 }

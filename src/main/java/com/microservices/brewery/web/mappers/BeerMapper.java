@@ -4,8 +4,8 @@ import com.microservices.brewery.domain.Beer;
 import com.microservices.brewery.web.model.BeerDto;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(uses = {DateMapper.class})
 public interface BeerMapper {
     BeerDto beerToBeerDto(Beer beer);
-    BeerDto beerDtoToBeer(BeerDto beerDto);
+    Beer beerDtoToBeer(BeerDto beerDto);
 }
