@@ -8,11 +8,15 @@ com\microservices\brewery\web\model\BeerDto.class
 com\microservices\brewery\web\model\v2\BeerStyleEnum.class
 com\microservices\brewery\services\BeerServiceImpl.class
 com\microservices\brewery\web\model\v2\BeerDtoV2.class
+com\microservices\brewery\domain\Beer.class
 com\microservices\brewery\web\model\CustomerDto.class
 com\microservices\brewery\services\CustomerServiceImpl.class
 com\microservices\brewery\web\controller\CustomerController.class
+com\microservices\brewery\domain\Beer$BeerBuilder.class
 com\microservices\brewery\services\v2\BeerServiceV2.class
 com\microservices\brewery\web\model\CustomerDto$CustomerDtoBuilder.class
 com\microservices\brewery\web\controller\v2\BeerControllerV2.class
+com\microservices\brewery\web\mappers\BeerMapperImpl.class
+com\microservices\brewery\web\mappers\BeerMapper.class
 com\microservices\brewery\web\model\BeerDto$BeerDtoBuilder.class
 com\microservices\brewery\web\model\v2\BeerDtoV2$BeerDtoV2Builder.class
