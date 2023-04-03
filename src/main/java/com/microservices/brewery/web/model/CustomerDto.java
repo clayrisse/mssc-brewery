@@ -1,10 +1,9 @@
 package com.microservices.brewery.web.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
 @Data
@@ -12,7 +11,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class CustomerDto {
+
     private UUID ID;
+
+    @NotNull @Size(min=3, max=100 )
     private String customerName;
 
 }
