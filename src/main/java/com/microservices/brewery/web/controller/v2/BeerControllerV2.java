@@ -2,7 +2,6 @@ package com.microservices.brewery.web.controller.v2;
 
 import ch.qos.logback.core.BasicStatusManager;
 import com.microservices.brewery.services.v2.BeerServiceV2;
-import com.microservices.brewery.web.model.BeerDto;
 import com.microservices.brewery.web.model.v2.BeerDtoV2;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.microservices.brewery.web.controller.BeerControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.949 s <<< FAILURE! - in com.microservices.brewery.web.controller.BeerControllerTest
+handlePost  Time elapsed: 0.078 s  <<< ERROR!
+org.springframework.restdocs.mustache.MustacheParseException: Section close tag with no open tag 'fields' @ line 10
+	at com.microservices.brewery.web.controller.BeerControllerTest.handlePost(BeerControllerTest.java:110)
+

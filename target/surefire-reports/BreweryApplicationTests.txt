@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: BreweryApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.333 s <<< FAILURE! - in BreweryApplicationTests
+BreweryApplicationTests  Time elapsed: 0.33 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+

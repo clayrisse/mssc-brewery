@@ -22,7 +22,6 @@ public class BeerController {
     }
 
     @GetMapping({"/hola"})
-//    @CrossOrigin()
     public String getHi(){
         System.out.println("hiiiiiiii");
         return "Hi";
