@@ -1,9 +1,9 @@
-package com.microservices.brewery;
+package com.microservices.brewery.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microservices.brewery.services.BeerService;
-import com.microservices.brewery.web.controller.BeerController;
 import com.microservices.brewery.web.model.BeerDto;
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,10 +22,12 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(BeerController.class)
-public class BeerControllerTest {
+public class BeerControllerTest extends TestCase {
 
     @MockBean
     BeerService beerService;

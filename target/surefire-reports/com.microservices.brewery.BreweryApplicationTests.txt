@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.microservices.brewery.BreweryApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.097 s <<< FAILURE! - in com.microservices.brewery.BreweryApplicationTests
+initializationError(com.microservices.brewery.BreweryApplicationTests)  Time elapsed: 0.013 s  <<< ERROR!
+java.lang.Exception: The class com.microservices.brewery.BreweryApplicationTests is not public.
+
+initializationError(com.microservices.brewery.BreweryApplicationTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Exception: Test class should have exactly one public constructor
+
+initializationError(com.microservices.brewery.BreweryApplicationTests)  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.Exception: Method contextLoads() should be public
+
