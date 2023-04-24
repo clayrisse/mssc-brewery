@@ -2,6 +2,7 @@ package com.microservices.brewery.web.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,7 +36,7 @@ public class BeerDto {
     @Positive
     private Long upc;
 
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:Z", shape = JsonFormat.Shape.STRING)
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssZ", shape = JsonFormat.Shape.STRING)
     private OffsetDateTime createdDate;
     private OffsetDateTime lastUpdatedDate;
 
@@ -44,5 +45,6 @@ public class BeerDto {
     private BigDecimal price;
 
     @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate myLocalDate;
 }
