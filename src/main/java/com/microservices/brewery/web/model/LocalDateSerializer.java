@@ -1,4 +1,4 @@
-package com.microservices.brewery.domain;
+package com.microservices.brewery.web.model;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
