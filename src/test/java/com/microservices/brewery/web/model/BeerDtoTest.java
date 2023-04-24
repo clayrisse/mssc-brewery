@@ -10,11 +10,9 @@ import java.io.IOException;
 
 //import static org.junit.jupiter.api.Assertions.*;
 
-@JsonTest
+@JsonTest // for json enviorment
 class BeerDtoTest extends BaseTest {
 
-    @Autowired
-    ObjectMapper objectMapper;
 
     @Test
     void testSerialDto() throws JsonProcessingException {
